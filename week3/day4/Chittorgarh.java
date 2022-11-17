@@ -18,11 +18,11 @@ public class Chittorgarh {
 	
 	/*
 	 * Chittorgarh:
-// 1. Launch the URL https://www.chittorgarh.com/
-//2. Click on stock market
-//3. Click on NSE bulk Deals
-//4. Get all the Security names
-//5. Ensure whether there are duplicate Security names
+	// 1. Launch the URL https://www.chittorgarh.com/
+	//2. Click on stock market
+	//3. Click on NSE bulk Deals
+	//4. Get all the Security names
+	//5. Ensure whether there are duplicate Security names
 	 */
 
 	public static void main(String[] args) throws InterruptedException {
@@ -33,7 +33,9 @@ public class Chittorgarh {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.get("https://www.chittorgarh.com/");
 		Thread.sleep(4000);
+		
 		driver.findElement(By.xpath("//a[@id='navbtn_stockmarket']")).click();
+		
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//a[text()='NSE Bulk Deals'])[1]")).click();
 		
@@ -41,32 +43,36 @@ public class Chittorgarh {
 		//table[@class='table table-bordered table-condensed table-striped']//tr[1]/td[3]
 		
          //to get the row size
-		List<WebElement> row = driver.findElements(By.xpath("//table[@class='table table-bordered table-condensed table-striped']//tr/td[3]"));
+		List<WebElement> row = driver.findElements(By.xpath("//table//tr/td[3]"));
 		int rowSize = row.size();
 		System.out.println("The size of the Rows :"+rowSize);
-		System.out.println("Security Name Values with Duplicates are:");
+		System.out.println("Security Name with Duplicates are:");
 		
 		//Adding the values to the list
 		List<String> list = new ArrayList<String>();
 		
 		for(WebElement each:row)
 		{
+						
+		//	System.out.println(each.getText());
 			
 			String secText = each.getText();
-			list.add(secText);
+			
+			list.add(secText); // to create set
 			
 		}
 		System.out.println(list);
 		
 		//Adding the list values to set to remove the duplicates
 		
-		Set<String> secNameRowSet = new LinkedHashSet<String>(list);
-		System.out.println("The Security Row size after removing duplicates "+secNameRowSet.size());
-			System.out.println(secNameRowSet);
+		Set<String> Set = new LinkedHashSet<String>(list);
+		
+		System.out.println("The Security Name after removing duplicates "+Set.size());
+		
+		System.out.println(Set);
 				
+		driver.close();
 		
 		}
-		
-		
-		
+				
 	}
