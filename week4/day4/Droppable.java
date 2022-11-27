@@ -33,6 +33,8 @@ public class Droppable {
 		
 		builder.dragAndDrop(drag, drop).perform();
 		
+	//	builder.dragAndDrop(drag, drop).build().perform();
+		
 		driver.switchTo().defaultContent();
 		
 		Thread.sleep(2000);

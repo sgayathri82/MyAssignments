@@ -32,6 +32,14 @@ public class Selectable {
 		
 		builder.clickAndHold(selectable).moveByOffset(0, 150).release().build().perform();
 		
+	//  Locate the Elements		
+	//	WebElement elementToSelect = driver.findElement(By.xpath("//li[text()='Item 2']"));
+	//	WebElement elementToSelect2 = driver.findElement(By.xpath("//li[text()='Item 3']"));
+				
+	//	Click and Hold to select the Items
+	//	builder.clickAndHold(elementToSelect).clickAndHold(elementToSelect2).click().build().perform();
+	//	System.out.println("Items Selected");
+		
 		driver.switchTo().defaultContent();
 		
 		Thread.sleep(2000);

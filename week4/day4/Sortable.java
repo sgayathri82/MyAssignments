@@ -39,6 +39,22 @@ public class Sortable {
 		driver.close();
 		
 		
+		//	WebElement sourceItem = driver.findElement(By.xpath("(//ul[@id='sortable']/li/span)[1]"));
+		//	WebElement destItem = driver.findElement(By.xpath("(//ul[@id='sortable']/li/span)[3]"));
+		
+		
+		//X and Y values of destinations
+		//		Point location=destItem.getLocation();
+		//		int x =location.getX();
+		//		int y= location.getY();
+		//		System.out.println("X :"+x+" Y: "+y);
+				
+				//Click and hold the source then Drag and drop the source to the x and y location		
+		//		builder.clickAndHold(sourceItem).dragAndDropBy(sourceItem, x, y).build().perform();
+		//		Thread.sleep(2000);
+		//		System.out.println("Item moved");
+		
+		
 	}
 
 }

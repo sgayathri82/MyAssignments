@@ -33,6 +33,14 @@ public class Resizable {
 		
 		builder.clickAndHold(resize).moveByOffset(40, 20).release().build().perform();
 		
+	//	Locate the resizable element
+	//	driver.findElement(By.id("resizable"));
+				
+	//	Locating the resizable point
+	//	WebElement reSize = driver.findElement(By.xpath("//div[@id='resizable']/div[3]"));
+		
+	//  builder.dragAndDropBy(reSize, 50, 40).build().perform();
+		
 		driver.switchTo().defaultContent();
 		
 		Thread.sleep(2000);
